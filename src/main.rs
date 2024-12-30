@@ -1,6 +1,16 @@
 #![allow(dead_code)]
 mod exercise1;
+mod arrays;
+mod vectores;
+mod exercise2;
+mod if_else;
+mod exercise3;
+
 fn main() {
+
+    // los tres primeros ejercicios son horribles
+
+    println!("\n \n \n");
     //num();
     //emoji();
     //more_num();
@@ -13,16 +23,21 @@ fn main() {
     // se llama a la funcion goodbye y se le pasa la variable casual
     //goodbye(casual);
 
-    let num1: i8 = 2;
-    let num2: i8 = 3;
-    println!("La suma de {} + {} es: {}", num1, num2, calculadora_mas(num1, num2));
+    //let num1: i8 = 2;
+    //let num2: i8 = 3;
+    //println!("La suma de {} + {} es: {}", num1, num2, calculadora_mas(num1, num2));
 
-    let num3: u32 = 4;
-    let num4: u32 = 3;
-    println!("La suma de {} + {} es: {}", num3, num4, si_suma_vale_5(num3, num4));
+    //let num3: u32 = 4;
+    //let num4: u32 = 3;
+    //println!("La suma de {} + {} es: {}", num3, num4, si_suma_vale_5(num3, num4));
 
     // se llama a la funcion de otro archivo
-    exercise1::main();
+    //exercise1::main();
+    //arrays::main();
+    //vectores::main();
+    //exercise2::main();
+    if_else::main();
+    exercise3::main();
 
 }
 
@@ -122,6 +137,7 @@ fn calculadora_mas(num1: i8, num2: i8) -> i8 {
     num1 + num2
 }
 
+// se asigna el tipo (ej u32) obligatoriamente para decir que la funcion devuelve un u32
 fn si_suma_vale_5(num: u32, num2: u32) -> u32{
     // crear una variable que sume los dos numeros
     // si la suma es 5, imprimir "El numero es 5"
