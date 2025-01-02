@@ -1,10 +1,11 @@
 #![allow(dead_code)]
-mod exercise1;
 mod arrays;
 mod vectores;
-mod exercise2;
 mod if_else;
-mod exercise3;
+#[path = "exercises/exercise1.rs"] mod exercise1;
+#[path = "exercises/exercise2.rs"] mod exercise2;
+#[path = "exercises/exercise3.rs"] mod exercise3;
+mod hash;
 
 fn main() {
 
@@ -36,8 +37,9 @@ fn main() {
     //arrays::main();
     //vectores::main();
     //exercise2::main();
-    if_else::main();
-    exercise3::main();
+    //if_else::main();
+    //exercise3::main();
+    hash::main();
 
 }
 
