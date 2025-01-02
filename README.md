@@ -7,16 +7,17 @@ En Rust, todas las variables son inmutables por defecto.
 Osea que si se asigna un valor a una variable este valor no se puede volver a cambiar.
  
 Variables inmutables por defecto:
-´
+
+```
 let valor = 10;
-´
+```
 
 ¿Cómo se puede volver mutable una variable? Fácil, sólo hay que añadir un "mut" antes del nombre de la variable 
 
 Variables mutables:
-´
+```
 let mut valor2 = 10;
-´
+```
 
 
 Ahora, algo que usa en Rust son las referencias a otra variable.
@@ -25,13 +26,13 @@ Ahora, algo que usa en Rust son las referencias a otra variable.
 
 Ejemplo:
 
-´
+```
 let x = 10;
 let y = &x;
 
 // si se hace un println! de los dos
 // tanto "x" como "y" darán 10, pero "y" no se puede mutar
-´
+```
 
 
 ## Tipos de variables (o dato)
@@ -69,15 +70,15 @@ usize (entero sin signo cuyo tamaño depende de la arquitectura del sistema, si 
 Para crear variables con estos tipos:
 
 i32:
-´
+```
 let num1: i32 = -10
 let num2: i32 = 10
-´
+```
 
 u32:
-´
+```
 let num3: u32 = 10
-´
+```
 
 
 
@@ -86,9 +87,9 @@ let num3: u32 = 10
 Char sólo permite crear una variable de un único carácter.
 
 Ejemplo:
-´
+```
 let emoji: char = '🦀';
-´
+```
 
 
 String y &str, ¿que signfica cada uno?
@@ -101,15 +102,15 @@ Ejemplos;
 
 Para crear una cadena vacía de String:
 
-´
+```
 let mut s = String::new();
-´
+```
 / Se usa mut ya que no tendría sentido crear una cadena de texto vacía inmutable 
 
 
-´
+```
 let s = String::from("Hola");
-´
+```
 / Se convierte una cadena de texto literal a un tipo de dato String
 
 
@@ -122,17 +123,17 @@ let s = String::from("Hola");
 
 Ejemplos;
 
-´
+```
 let saludo: &str = "Hola, mundo!";
-´
+```
 
 
 Acá un ejemplo de lo explicado, que &str es para trabajar con cedenas de texto que son referencias.
 
-´
+```
 let s = String::from("Hola, mundo!");
 let parte: &str = &s[0..4]; // "Hola"
-´
+```
 
 
 # bool (o también llamado tipo booleano):
@@ -141,10 +142,10 @@ Casi igual a otros lenguajes, el tipo booleano puede ser "true" o "false".
 Normalmente se usan para if, else, while (obligatorio) y match.
 
 
-´
+```
 let es_verdadero: bool = true;
 let es_falso: bool = false;
-´
+```
 
 
 ## Tipos de structs (cómo objetos en JS,etc) (también tupla)
@@ -155,15 +156,15 @@ Antes de seguir con el resto de estructuras de datos te dejo las tuplas (parecid
 Las tuplas pueden contener elementos de diferentes tipos, estando agrupados juntos. Las tuplas son útiles para agrupar un pequeño número de valores heterogéneos.
 Las tuplas se definen cómo cualquier variable, u objeto en caso de JavaScript.
 
-´
+```
 let tupla: (i32, f64, bool) = (42, 3.14, true);
-´
+```
 
 Las tuplas son sólo pedazos de código que se declaran y se usan (a diferencia de las estructuras de tupla).
 
 Dejo un código como ejemplo de DOS formas que se tienen para acceder a los elementos dentro de una tupla.
 
-´
+```
 // Acceder a los elementos de la tupla por su posición
 let (x, y, z) = tupla;
 println!("x: {}, y: {}, z: {}", x, y, z);
@@ -172,7 +173,7 @@ println!("x: {}, y: {}, z: {}", x, y, z);
 println!("El primer valor es: {}", tupla.0);
 println!("El segundo valor es: {}", tupla.1);
 println!("El tercer valor es: {}", tupla.2);
-´
+```
 
 
 # Estructuras:
@@ -187,23 +188,23 @@ Sobre todo voy a usar ejemplos para estos casos.
 # Estructura de tipo Tupla:
 Se acceden a los valores de la instancia por posición (tuple.0 = primer valor).
 
-´
+```
 struct Color(u8, u8, u8);
-´
+```
 Son cómo las tuplas pero tienen nombre y se definen cómo el resto de estructuras (struct).
 Los campos de esta estructura no tienen nombre, sólo posiciones cómo las tuplas.
 
 Son bastante útiles para usar un grupo de elementos (del mismo tipo) sin necesidad de nombres para cada campo.
 
 Ejemplo 
-´
+```
 struct Color(u8, u8, u8);
 
 let rojo = Color(255, 0, 0);
 
 // Acceder a los elementos de la estructura de tupla por su posición
 println!("Rojo: {}, Verde: {}, Azul: {}", rojo.0, rojo.1, rojo.2);
-´
+```
 
 
 # Estructura clásicas:
@@ -211,16 +212,16 @@ Campos con nombres. Muy parecidas a los objetos en otros lenguajes.
 Se acceden a los valores de la instancia por campos con nombre.
 
 Así se definen:
-´
+```
 struct Persona {
     nombre: String,
     edad: u8,
     es_estudiante: bool,
 }
-´
+```
 
 Así se usan:
-´
+```
 let persona = Persona {
     nombre: String::from("Alice"),
     edad: 30,
@@ -228,25 +229,25 @@ let persona = Persona {
 };
 
 println!("Nombre: {}", persona.nombre);
-´
+```
 
 
 # Estructuras unitarias:
 No tienen campos. Se utilizan sobre todo para implementar traits en tipos que no tienen datos asociados. Cómo esto es más complejo lo dejo para otra guía.
 
 Se definen así:
-´
+```
 struct Unit_Struct;
-´
+```
 
 Ejemplo
 Básicamente se usan para por ejemplo darles comportamientos específicos a diferentes roles de usuario.
-´
+```
 struct Admin;
 struct Guest;
 
 // código más complejo dando compotamiento usando traits.
-´
+```
 
 
 
@@ -256,9 +257,9 @@ struct Guest;
 Creación de una función.
 Las funciones se crean con la palabra clave "fn".
 
-´
+```
 fn main(){}
-´
+```
 
 Para crear la función main.
 
@@ -271,31 +272,31 @@ Si en un archivo tenemos la función main y la queremos ejecutar desde el archiv
 
 1. Debemos volver pública la función.
    Así se hace una función pública:
-   ´
+   ```
    pub(crate) fn nombre_función(){}
-   ´
+   ```
 2. Luego debemos añadir el archivo donde está la función pública.
-   ´
+   ```
    mod nombre_archivo;
-   ´
+   ```
    Si se necesita un archiv que está en una subcarpeta:
-   ´
+   ```
    #[path = "subcarpeta/archivo.rs"] mod nombre_función;
-   ´
+   ```
 3. Ahora se debe ejecutar la función.
    Se puede ejecutar la función desde cualquier parte del código.
-   ´
+   ```
    nombre_archivo::nombre_función;
-   ´
+   ```
 
 Aquí te dejo un ejemplo:
 
-´
+```
 // se añade el archivo y la función
 #[path = "exercises/exercise3.rs"] mod exercise3;
 // se ejecuta la función
 exercise3::main();
-´
+```
 
 
 ## Bucles, flujos de control, etc.
@@ -314,11 +315,11 @@ Si un sólo "break" devuelve un valor (cómo lo hace return, osea "break valor;"
 Si no se devuelve nada de forma explícita, entonces el programa lo hará. El programa devuelve cómo mínimo una tupla vacía, osea ().
 
 La sintaxis de loop es:
-´
+```
 loop {
     // código
 }
-´
+```
 
 
 # While: Expresión condicional.
@@ -326,11 +327,11 @@ loop {
 While funciona con condicional, por lo cual se ejecuta si la 
 
 La sintaxis de while es:
-´
+```
 while condición {
     // código
 }
-´
+```
 
 # For: Iteraciones.
 
@@ -339,12 +340,12 @@ Se puede iterar sobre una colección de elementos, osea sobre una matriz, un vec
 En estos casos, se usa una variable temporal cómo en otros lenguajes para almacenar el valor de cada iteracion.
 
 Ejemplo 1:
-´
+```
 let big_birds = ["ostrich", "peacock", "stork", "heron", "flamingo"];
     for bird in big_birds.iter(){
         println!("The bird is: {}", bird);
     }
-´
+```
 Se usa ".iter()" para iterar entre los elementos.
 Y la variable temporal es "bird"
 
@@ -353,7 +354,7 @@ Otra forma de iterar es sobre un rango.
 Se usa ".." para crear un rango abierto, osea que no incluye el valor final.
 Y se usa "..=" para crear un rango cerrado, el cual sí incluye el valor final.
 
-´
+```
 // con ..
 for number in 1..6{ // comienza en 1 y termina en 5
         println!("The number is: {}", number);
@@ -363,7 +364,7 @@ for number in 1..6{ // comienza en 1 y termina en 5
 for number in 1..=6{ // comienza en 1 y termina en 6
     println!("The number is: {}", number);
 }
-´
+```
 
 
 
