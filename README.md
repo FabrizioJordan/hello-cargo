@@ -1,7 +1,7 @@
-### Para entender todo esto:
+# Para entender todo esto:
 
 
-# Declarar variables
+## Declarar variables
 
 En Rust, todas las variables son inmutables por defecto.
 Osea que si se asigna un valor a una variable este valor no se puede volver a cambiar.
@@ -34,12 +34,12 @@ let y = &x;
 ´
 
 
-# Tipos de variables (o dato)
+## Tipos de variables (o dato)
 
 Para aprender sobre inmutabilidad y mutabilidad (importante en Rust) ve al anterior punto (Declarar variables). 
 
 
-Números: 
+# Números: 
 
 
 Los tipos de variables numéricas se dividen en enteros y de punto flotante. 
@@ -81,7 +81,7 @@ let num3: u32 = 10
 
 
 
-Char y String (también &str):
+# Char y String (también &str):
 
 Char sólo permite crear una variable de un único carácter.
 
@@ -135,7 +135,7 @@ let parte: &str = &s[0..4]; // "Hola"
 ´
 
 
-Tipo bool (booleano):
+# bool (o también llamado tipo booleano):
 
 Casi igual a otros lenguajes, el tipo booleano puede ser "true" o "false".
 Normalmente se usan para if, else, while (obligatorio) y match.
@@ -147,8 +147,9 @@ let es_falso: bool = false;
 ´
 
 
-# Tipos de structs (cómo objetos en JS,etc) (también tupla)
+## Tipos de structs (cómo objetos en JS,etc) (también tupla)
 
+# Tuplas:
 Antes de seguir con el resto de estructuras de datos te dejo las tuplas (parecido a un objeto de JavaScript).
 
 Las tuplas pueden contener elementos de diferentes tipos, estando agrupados juntos. Las tuplas son útiles para agrupar un pequeño número de valores heterogéneos.
@@ -174,7 +175,7 @@ println!("El tercer valor es: {}", tupla.2);
 ´
 
 
-Estructuras:
+# Estructuras:
 
 Algunos tipos de structs son, structs clásicas, structs de tupla y structs unitarios. 
 Las estructuras serían parecido a usar POO (programación orientada a objetos) en JavaScript u otros lenguajes. Por lo cual se crean instancias de estas structs.
@@ -183,7 +184,7 @@ Las estructuras serían parecido a usar POO (programación orientada a objetos) 
 Sobre todo voy a usar ejemplos para estos casos.
 
 
-Estructura de tipo Tupla:
+# Estructura de tipo Tupla:
 Se acceden a los valores de la instancia por posición (tuple.0 = primer valor).
 
 ´
@@ -205,7 +206,7 @@ println!("Rojo: {}, Verde: {}, Azul: {}", rojo.0, rojo.1, rojo.2);
 ´
 
 
-Estructura clásicas:
+# Estructura clásicas:
 Campos con nombres. Muy parecidas a los objetos en otros lenguajes.
 Se acceden a los valores de la instancia por campos con nombre.
 
@@ -230,7 +231,7 @@ println!("Nombre: {}", persona.nombre);
 ´
 
 
-Estructuras unitarias:
+# Estructuras unitarias:
 No tienen campos. Se utilizan sobre todo para implementar traits en tipos que no tienen datos asociados. Cómo esto es más complejo lo dejo para otra guía.
 
 Se definen así:
@@ -250,7 +251,7 @@ struct Guest;
 
 
 
-# Funciones
+## Funciones
 
 Creación de una función.
 Las funciones se crean con la palabra clave "fn".
@@ -262,7 +263,7 @@ fn main(){}
 Para crear la función main.
 
 
-# Importaciones y funciones públicas
+## Importaciones y funciones públicas
 
 Para importar y poder ejecutar una función de otro archivo se debe hacer pública dicha función a usar.
 
@@ -297,13 +298,13 @@ exercise3::main();
 ´
 
 
-# Bucles, flujos de control, etc.
+## Bucles, flujos de control, etc.
 
 Hay varios bucles que conozco.
 Loop, While y For.
 
 
-Loop: Bucle infinito.
+# Loop: Bucle infinito.
 
 Aunque loop es un bucle infinito, este tiene la opción de parar.
 Para parar un loop se usa la instrucción "break;"
@@ -320,7 +321,7 @@ loop {
 ´
 
 
-While: Expresión condicional.
+# While: Expresión condicional.
 
 While funciona con condicional, por lo cual se ejecuta si la 
 
@@ -331,7 +332,7 @@ while condición {
 }
 ´
 
-For: Iteraciones.
+# For: Iteraciones.
 
 For funciona de dos formas. Siempre se ejecuta un número determinado de veces.
 Se puede iterar sobre una colección de elementos, osea sobre una matriz, un vector o un mapa hash.
