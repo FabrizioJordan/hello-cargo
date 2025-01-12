@@ -1,5 +1,20 @@
 # Para entender todo esto:
 
+## Compilar y ejecutar 
+
+Rust es un lenguaje de compilación. Por ende se debe compilar antes para poder ejecutarse.
+
+Para compilar:
+```
+rustc main.rs
+```
+Esto crea un archivo llamado main sin extensión.
+
+Para ejecutar:
+```
+./main
+```
+
 
 ## Declarar variables
 
