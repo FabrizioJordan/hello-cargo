@@ -209,7 +209,7 @@ println!("El tercer valor es: {}", tupla.2);
 ```
 
 
-### Estructuras:
+### Estructuras (structs):
 
 Algunos tipos de structs son, structs clásicas, structs de tupla y structs unitarios. 
 Las estructuras serían parecido a usar POO (programación orientada a objetos) en JavaScript u otros lenguajes. Por lo cual se crean instancias de estas structs.
@@ -282,7 +282,24 @@ struct Guest;
 // código más complejo dando compotamiento usando traits.
 ```
 
+### Enum
 
+<a id="item_enum"></a>
+
+¿Qué es un enum? 
+
+Un enum es un tipo de dato, sirve para tener sus posibles variantes, o también llamados conjuntos de valores fijos.
+
+Es un tipo de dato personalizado, por lo cual todas sus variantes pueden ser personalizadas.
+
+Ejemplo:
+
+```
+enum TipoDeComputador {
+    PC,
+    Laptop,
+}
+```
 
 
 ## Funciones
@@ -348,10 +365,36 @@ Si un sólo "break" devuelve un valor (cómo lo hace return, osea "break valor;"
 Si no se devuelve nada de forma explícita, entonces el programa lo hará. El programa devuelve cómo mínimo una tupla vacía, osea ().
 
 La sintaxis de loop es:
+
 ```
 loop {
     // código
 }
+```
+
+Otro agregado de ```loop``` es el uso del ```continue```.
+
+Cuando necesitas que en medio de una iteración del "loop" se pase de largo el resto del código pero que no pare de iterar (cómo lo hace ```break;```), entonces se puede usar ```continue;```
+
+Osea básicamente si uno quiere en medio de una iteración parar la actual, e ir a la siguiente, se puede usar ```continue```.
+
+Acá te dejo un ejemplo:
+
+```
+// loop medio simple (con continue)
+
+    // las dos siguientes líneas son para conseguir un número al azar
+    use rand::Rng;
+    let azar_numero = rand::thread_rng().gen_range(1..=100);
+    
+    let mut num_actual = 0;
+    loop { 
+        println!("El número actual es: {}", num_actual);
+        if num_actual == azar_numero {
+            continue;
+        }
+        num_actual += 1;
+    }
 ```
 
 

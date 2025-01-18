@@ -1,17 +1,23 @@
 fn main(){
     // Bucles loop y while.
+    loops();
+    sobre_while();
+}
 
-
+fn loops(){
                 // Loop
 
     // loop es un bucle infinito, 
     // no tiene forma de parar menos con break
+    // o con continue, que hace parecido a break, pero en vez de parar todo el loop
+    // lo que hace es parar la actual iteración e ir a la siguiente
 
+    // loop simple, no para nunca
     loop{
         println!("Esto es un bucle infinito");
     }
 
-    //              Ejemplo
+    // loop más complejo, para si se llega a break;
 
     let mut counter = 1;
     let stop_loop = loop{
@@ -23,6 +29,24 @@ fn main(){
 
     println!("El bucle se detuvo en: {}", stop_loop);
 
+    // loop medio simple (con continue)
+
+    // las dos siguientes líneas son para conseguir un número al azar
+    use rand::Rng;
+    let azar_numero = rand::thread_rng().gen_range(1..=100);
+    
+    let mut num_actual = 0;
+    loop { 
+        println!("El número actual es: {}", num_actual);
+        if num_actual == azar_numero {
+            continue;
+        }
+        num_actual += 1;
+    }
+
+}
+
+fn sobre_while(){
 
                 // While
 
@@ -36,6 +60,5 @@ fn main(){
         println!("Contador: {}", count);
         count += 1;
     }
-
 
 }
