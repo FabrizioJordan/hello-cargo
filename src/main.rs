@@ -130,6 +130,40 @@ fn my_enum(){
     println!("The web event keys is: {:#?}", we_keys);
 }
 
+
+fn otro_enum(){
+/* ¿Qué es un enum? 
+
+Un enum es un tipo de dato, sirve para tener sus posibles variantes, o también llamados conjuntos de valores fijos.
+
+Es un tipo de dato personalizado, por lo cual todas sus variantes pueden ser personalizadas.
+
+Ejemplo: */
+
+enum TipoDeComputador {
+    PC,
+    Laptop,
+}
+
+/* Vamos a seguir este ejemplo un poco más, como si tuvieramos dos opciones en una venta. */
+
+struct VentaDeComputador {
+    tipo: TipoDeComputador,
+    valor: String,
+}
+
+let computador_sobremesa = VentaDeComputador{
+    tipo: TipoDeComputador::PC,
+    valor: String::from("12000")
+};
+
+let computador_laptop = VentaDeComputador{
+    tipo: TipoDeComputador::Laptop,
+    valor: String::from("6200")
+};
+
+}
+
 fn goodbye(message: &str) {
     println!("Goodbye, {}", message);
 }

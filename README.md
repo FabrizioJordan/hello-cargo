@@ -301,6 +301,35 @@ enum TipoDeComputador {
 }
 ```
 
+Vamos a seguir este ejemplo un poco más, como si tuvieramos dos opciones en una venta.
+
+```
+
+enum TipoDeComputador {
+    PC,
+    Laptop,
+}
+
+struct VentaDeComputador {
+    tipo: TipoDeComputador,
+    valor: String,
+}
+
+let computador_sobremesa = VentaDeComputador{
+    tipo: TipoDeComputador::PC,
+    valor: String::from("12000")
+};
+
+let computador_laptop = VentaDeComputador{
+    tipo: TipoDeComputador::Laptop,
+    valor: String::from("6200")
+};
+
+```
+
+Lo que hacemos en este caso es crear un enum, con dos variantes, si es una PC de sobremesa o si es una Laptop. 
+
+Luego creamos un struct clásico (casi que un objeto) donde el tipo de computador será si o si una de las variantes del enum creado anteriormente, y por último instanciamos el struct creando dos ejemplos.
 
 ## Funciones
 
